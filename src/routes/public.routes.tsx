@@ -1,7 +1,5 @@
 import React, {ReactElement} from 'react';
-
 import {createStackNavigator} from '@react-navigation/stack';
-
 import {TaskDetail} from '../features/task-detail/task-detail';
 import {Home} from '../features/home/home';
 import {ScreenNames} from '../shared/screen-names';
@@ -35,9 +33,6 @@ export const PublicRoutes = (): ReactElement => (
                 gestureEnabled: true
             }}
         />
-
-
-
 
     </AuthStack.Navigator>
 );

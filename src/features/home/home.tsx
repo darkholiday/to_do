@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 import {homeStyles} from './home.style';
-import {FlatList, View, Text} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {CustomHeader} from '../../shared/custom-components/header/custom-header';
 import {TaskItem} from './task-item/task-item';
 import {FAB} from 'react-native-paper';
@@ -17,11 +17,13 @@ import {useIsFocused} from "@react-navigation/native";
 
 export const Home = () =>
 {
-	const [isDrawerOpen, setDrawerOpen] = useState(false);
+	const {t} = useTranslation();
+    const navigation = useNavigation();
+	const isFocused = useIsFocused();
 	let drawerRef = useRef<Drawer>();
-	const [tasks, setTasks] = useState([]);
-    const isFocused = useIsFocused();
 
+	const [isDrawerOpen, setDrawerOpen] = useState(false);
+	const [tasks, setTasks] = useState([]);
 
     useEffect(() =>
     {
@@ -33,10 +35,6 @@ export const Home = () =>
 		isDrawerOpen ? drawerRef.close() : drawerRef.open()
 		setDrawerOpen(!isDrawerOpen);
 	}
-
-    const {t} = useTranslation();
-    const navigation = useNavigation();
-
 
     const renderItem = ({item}) => <TaskItem data={item}/>
 
@@ -57,18 +55,19 @@ export const Home = () =>
         	>
 
 				<View style={homeStyles.mainContainer}>
-				<CustomHeader label={t('HOME.TITLE')} onDrawerClick={toggleDrawer}/>
 
-				{tasks.length > 0 ? (
-					<FlatList
-						style={homeStyles.flatList}
-						data={tasks}
-						keyExtractor={(item, index) => `${item.id}-${index}`}
-						renderItem={renderItem}
-					/>
-					) : (
-						<NoDataPlaceholder text={t('HOME.NO_DATA_TITLE')} subText={t('HOME.NO_DATA_SUB')} image={IcnNoTasks} />
-					)
+					<CustomHeader label={t('HOME.TITLE')} onDrawerClick={toggleDrawer}/>
+
+					{tasks.length > 0 ? (
+						<FlatList
+							style={homeStyles.flatList}
+							data={tasks}
+							keyExtractor={(item, index) => `${item.id}-${index}`}
+							renderItem={renderItem}
+						/>
+						) : (
+							<NoDataPlaceholder text={t('HOME.NO_DATA_TITLE')} subText={t('HOME.NO_DATA_SUB')} image={IcnNoTasks} />
+						)
 					}
 
 					<FAB

@@ -1,6 +1,5 @@
 import Realm from "realm";
 
-
 export interface Task
 {
     id: BigInteger;
@@ -9,7 +8,7 @@ export interface Task
     date: string,
     hour: string,
     isDone: boolean
-}
+};
 
 export const TasksSchema =
 {
@@ -25,21 +24,6 @@ export const TasksSchema =
         isDone: 'bool'
     },
 };
-
-/*export const openDatabase = () =>
-{
-    if(tasksRealm)
-    {
-        return tasksRealm;
-    }
-    else
-    {
-        return Realm.open({
-            schema: [TasksSchema]
-        });
-    }
-
-}*/
 
 export const tasksRealm: Realm = new Realm({
     schema: [TasksSchema],

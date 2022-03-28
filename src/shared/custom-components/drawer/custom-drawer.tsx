@@ -1,7 +1,5 @@
 import React from 'react';
-
 import {Text, Image, View, ImageBackground} from 'react-native';
-
 import {customDrawerStyle} from './custom-drawer.style';
 import IcnDrawerHeader from '../../../shared/assets/icn-drawer-header/icn-drawer-header.jpg';
 import IcnProfileImage from '../../../shared/assets/icn-user-profile/icn-user-profile.png';
@@ -18,7 +16,7 @@ export const CustomDrawer = () =>
                 <Text style={customDrawerStyle.emailText}>{t('DRAWER.EMAIL')}</Text>
             </ImageBackground>
 
-            <View style={customDrawerStyle.sectionsContainer}>
+            <View>
 
                 <Text style={customDrawerStyle.selectedText}>{t('DRAWER.TODO')}</Text>
                 <View style={customDrawerStyle.separator} />

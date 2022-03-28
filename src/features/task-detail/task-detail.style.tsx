@@ -4,7 +4,7 @@ import {Colors} from '../../shared/colors';
 export const taskDetailStyles = StyleSheet.create({
     mainContainer:
     {
-        flex: 1,
+        flex: 1
     },
     contentContainer:
     {

@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next';
 import {taskDetailStyles} from './task-detail.style';
 import {Text, TextInput, View, TouchableOpacity, Alert} from 'react-native';
 import {CustomHeader} from '../../shared/custom-components/header/custom-header';
-import {NavigationRouteContext, useRoute} from '@react-navigation/native';
+import {useRoute} from '@react-navigation/native';
 import {Checkbox} from 'react-native-paper';
 import {Colors} from '../../shared/colors';
 import {FAB} from 'react-native-paper';
@@ -164,6 +164,7 @@ export const TaskDetail = () =>
                     />
 
                     <Text style={taskDetailStyles.inputHeader}>{t('TASK_DETAIL.DESCRIPTION')}</Text>
+
                     <TextInput
                         style={[taskDetailStyles.input, {fontSize: 16}]}
                         onChangeText={setDescription}
@@ -173,6 +174,7 @@ export const TaskDetail = () =>
                      />
 
                     <Text style={taskDetailStyles.inputHeader}>{t('TASK_DETAIL.DATE_HOUR')}</Text>
+
                     <View style={taskDetailStyles.dateContainer}>
 
                         <TouchableOpacity onPress={openDatePicker} style={taskDetailStyles.dateTouchable} >
@@ -217,7 +219,6 @@ export const TaskDetail = () =>
                     />
                 }
 
-
                 {showHourPicker &&
                     <DateTimePicker
                         minimumDate={new Date()}
@@ -230,5 +231,5 @@ export const TaskDetail = () =>
                 }
             </View>
         </>
-  );
+    );
 };

@@ -43,8 +43,5 @@ export const customDrawerStyle = StyleSheet.create({
         fontSize: 16,
         color: Colors.mainTextColor,
         margin: 20
-    },
-    sectionsContainer:
-    {
     }
 });

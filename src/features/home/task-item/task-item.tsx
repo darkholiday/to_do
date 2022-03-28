@@ -9,7 +9,6 @@ import {UIListDateFormat} from '../../../shared/utils';
 import {format} from "date-fns";
 import {getTaskByID, Task, updateIsDone} from '../../../shared/database';
 
-
 interface TaskItemProps
 {
     data?: Task;
@@ -19,7 +18,6 @@ export const TaskItem: FC<TaskItemProps> = ({data}) =>
 {
     const navigation = useNavigation();
     const [localData, setLocalData]=useState(data);
-
 
     const updateTaskStatus = () =>
     {
