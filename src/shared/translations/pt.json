@@ -1,0 +1,27 @@
+{
+    "translation": {
+        "HOME": {
+            "TITLE": "Lista de Tarefas",
+            "NO_DATA_SUB": "Tu ainda não tem nenhuma tarefa, adicione alguns para vê-los aqui.",
+            "NO_DATA_TITLE": "Nenhuma tarefa"
+        },
+        "TASK_DETAIL":{
+            "ADD_TITLE": "Adicionar nova tarefa",
+            "EDIT_TITLE": "Edição da tarefa",
+            "TITLE": "Titulo",
+            "DESCRIPTION": "Descrição",
+            "DATE_HOUR": "Data e hora de conclusão",
+            "FINISHED": "Completada?",
+            "DELETE_DIALOG_TITLE": "Excluir confirmação",
+            "DELETE_DIALOG_DESCRIPTION": "Tem certeza de que deseja excluir esta tarefa ?",
+            "YES": "Sim",
+            "NO": "Não"
+        },
+        "DRAWER": {
+            "LOGOUT": "Sair",
+            "SETTINGS": "Configuração",
+            "TODO": "To Do",
+            "EMAIL": "Nidhal.enjoyneering@gmail.com"
+        }
+    }
+}
